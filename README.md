@@ -77,6 +77,7 @@ QuizMyWords/
 |-- src/
 |   |-- data/              # Word list CSV files
 |   |-- quizzes/           # Code for all quizzes
+|   |-- tests/             # Unit tests for functions
 |   |-- utils/             # Helper functions
 |   |-- main.py            # Program entry point
 |-- README.md
