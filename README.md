@@ -65,7 +65,7 @@ pip install -r requirements.txt
 Run the program from the command line:
 
 ```
-python src/main.py
+python -m src.main
 ```
 Follow the on-screen instructions to select a word list and quiz type.
 

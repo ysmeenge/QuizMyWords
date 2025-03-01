@@ -32,9 +32,8 @@ def ask_file_name():  # Note: future improvment -> error messages are delayed
             print()
 
 
-def choose_language_order(chosen_file_name):
+def choose_language_order(word_list_df):
 
-    word_list_df = pd.read_csv("src\\data\\" + chosen_file_name)
     language1 = word_list_df.columns[0]
     language2 = word_list_df.columns[1]
 
@@ -60,3 +59,14 @@ def choose_language_order(chosen_file_name):
     print(f"Great! We will quiz words from {from_language} to {to_language}.\n")
 
     return (from_language, to_language)
+
+
+def start_program():
+
+    chosen_file_name = ask_file_name()
+
+    word_list_df = pd.read_csv("src\\data\\" + chosen_file_name)
+
+    from_language, to_language = choose_language_order(word_list_df)
+
+    print(f"Let's START! We will quiz words from {from_language} to {to_language}.\n")
