@@ -98,4 +98,7 @@ def start_program():
 
     select_quiz_type()
 
+    # skip_words_df = pd.read_csv("src\\data\\skip_list.csv")
+    # skip_words_list = skip_words_df["WORDS"].tolist()
+
     print(f"Let's START! We will quiz words from {from_language} to {to_language}.\n")
