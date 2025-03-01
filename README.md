@@ -76,6 +76,7 @@ Follow the on-screen instructions to select a word list and quiz type.
 QuizMyWords/
 |-- src/
 |   |-- data/              # Word list CSV files
+|   |-- quizzes/           # Code for all quizzes
 |   |-- utils/             # Helper functions
 |   |-- main.py            # Program entry point
 |-- README.md
