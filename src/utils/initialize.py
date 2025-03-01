@@ -65,7 +65,7 @@ def select_quiz_type():
     quiz_number = -1
     quiz_number = input(
         """What kind of quiz would you like to do?
-    1. Flascards - Come up with the translation in your head.
+    1. Flascards - Come up with the translation in your head. No grade is given.
     2. Quiz - Type in the answer. Each word is asked once.
     3. Repeated Quiz - Type in the answer. Repeated until correct.
     4. Multiple choice - Repeated until correct.
