@@ -3,7 +3,7 @@ import os
 
 def ask_file_name():
     # Get all .csv files in the 'data' folder
-    data_folder = "data"
+    data_folder = "src\\data"
     csv_files = [f for f in os.listdir(data_folder) if f.endswith(".csv")]
 
     # Check if there are CSV files available
@@ -29,3 +29,6 @@ def ask_file_name():
         except ValueError:
             print("\n ERROR: Invalid input. Please enter a number.", flush=True)
             print()
+
+
+# Note: future improvment -> error messages are delayed
