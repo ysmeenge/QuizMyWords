@@ -26,7 +26,7 @@ def give_hint(answer_string, skip_words_list):
     Examples:
     answer_string = "solution" --> hint = "s......."
     answer_string = "Hello everyone!" --> hint = "H.... ........!"
-    answer_string = "!Hola!" --> hint = '!H...!"
+    answer_string = "¡Hola!" --> hint = '¡H...!"
     answer_string = "la tortuga" --> hint = "la t......"
     """
 
