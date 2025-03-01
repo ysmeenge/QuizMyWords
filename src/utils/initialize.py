@@ -1,6 +1,8 @@
 import os
 import pandas as pd
 
+import src.quizzes.quizzes as quiz
+
 
 def ask_file_name():  # Note: future improvment -> error messages are delayed
     # Get all .csv files in the 'data' folder
@@ -66,11 +68,11 @@ def select_quiz_type():
     quiz_number = -1
     quiz_number = input(
         """What kind of quiz would you like to do?
-    1. Flascards - Come up with the translation in your head. No grade is given.
-    2. Quiz - Type in the answer. Each word is asked once.
-    3. Repeated Quiz - Type in the answer. Repeated until correct.
-    4. Multiple choice - Repeated until correct.
-  Type in which quiz type you want (1,2,3,4): """
+        1. Flascards - Come up with the translation in your head. No grade is given.
+        2. Quiz - Type in the answer. Each word is asked once.
+        3. Repeated Quiz - Type in the answer. Repeated until correct.
+        4. Multiple choice - Repeated until correct.
+        Type in which quiz type you want (1,2,3,4): """
     )
 
     while quiz_number not in ("1", "2", "3", "4"):
@@ -96,9 +98,9 @@ def start_program():
 
     from_language, to_language = choose_language_order(word_list_df)
 
-    select_quiz_type()
+    quiz_number, action_string = select_quiz_type()
 
-    # skip_words_df = pd.read_csv("src\\data\\skip_list.csv")
-    # skip_words_list = skip_words_df["WORDS"].tolist()
+    skip_words_df = pd.read_csv("src\\data\\skip_list.csv")
+    skip_words_list = skip_words_df["WORDS"].tolist()
 
-    print(f"Let's START! We will quiz words from {from_language} to {to_language}.\n")
+    quiz.start_quiz(word_list_df, from_language, to_language, quiz_number, action_string, skip_words_list)
