@@ -40,7 +40,7 @@ def choose_language_order(word_list_df):
     language1 = word_list_df.columns[0]
     language2 = word_list_df.columns[1]
 
-    language_options = ""  # lege string
+    language_options = ""  # empty string
 
     while language_options != "1" and language_options != "2":
         language_options = input(
