@@ -6,6 +6,7 @@ def ask_file_name():  # Note: future improvment -> error messages are delayed
     # Get all .csv files in the 'data' folder
     data_folder = "src\\data"
     csv_files = [f for f in os.listdir(data_folder) if f.endswith(".csv")]
+    csv_files.remove("skip_list.csv")
 
     # Check if there are CSV files available
     if not csv_files:
