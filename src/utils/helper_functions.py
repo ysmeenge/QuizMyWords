@@ -9,8 +9,8 @@ def clean_string(string1):
     # Removing everything between parentheses using regex
     string1_without_parentheses = re.sub(r"\(.*?\)", "", string1)
 
-    # remove unnessary spaces on beginning and end and remove double spaces
-    string1_cleaned = string1_without_parentheses.strip().replace("  ", " ")
+    # Remove unnecessary spaces on beginning, end, and between words
+    string1_cleaned = re.sub(r"\s+", " ", string1_without_parentheses.strip())
 
     return string1_cleaned
 
