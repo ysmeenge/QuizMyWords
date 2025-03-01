@@ -7,22 +7,22 @@ A Python-based word quiz application that helps you test and strengthen your voc
 
 * Multiple Quiz Types:
   * Flashcards
-  * Typing Quiz (one word per time)
-  * Repeated Typing Quiz (until the correct answer)
+  * Typing Quiz (quiz each word once)
+  * Repeated Typing Quiz (quiz until correct answer)
   * Multiple Choice Quiz (repeated until correct)
 * Custom Word Lists: Provide your own words in CSV format.
 * Immediate Feedback: See results right after answering.
 * Final Score: Get a clear overview of your performance at the end.
 
 
-## How the quiz works:
+## How the quiz works
 
 1. Place your word list CSV files in the src/data folder.
 2. Start the program and choose a word list.
 3. Choose which language you want to practice (e.g. from English to Spanish or from Spanish to English)
 3. Select a quiz type
 4. Answer the questions and get instant feedback.
-5. Receive hints when needed.
+5. Receive hints when needed. It shows the first letter of the word (excluding articles) and the amount of letters. e.g. "la tortuga", hint: "la t......".
 6. See your final score when the quiz ends.
 6. Choose the next quiz if you want to.
 
@@ -35,6 +35,17 @@ hello,hallo
 book,boek
 cat,kat
 ```
+
+The data is cleaned before being used.
+Example:
+```
+English,Dutch
+to work  ,trabajar
+to have to (obligation),deber
+```
+* the extra space in "to work  " are removed and do not have to be typed in while being quizzed
+* the information in between parentheses is shown in the question, but shouldn't be included in the answer
+
 
 ## Setup & Installation
 
