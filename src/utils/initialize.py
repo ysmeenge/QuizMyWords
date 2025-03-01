@@ -61,6 +61,32 @@ def choose_language_order(word_list_df):
     return (from_language, to_language)
 
 
+def select_quiz_type():
+    quiz_number = -1
+    quiz_number = input(
+        """What kind of quiz would you like to do?
+    1. Flascards - Come up with the translation in your head.
+    2. Quiz - Type in the answer. Each word is asked once.
+    3. Repeated Quiz - Type in the answer. Repeated until correct.
+    4. Multiple choice - Repeated until correct.
+  Type in which quiz type you want (1,2,3,4): """
+    )
+
+    while quiz_number not in ("1", "2", "3", "4"):
+        quiz_number = input("This input is incorrect. Please type in one of the following numbers (1, 2, 3, 4): ")
+    quiz_number = int(quiz_number)
+
+    # Select action for user
+    if quiz_number == 1:
+        action_string = "Type 'h' if you want a hint. \n Press ENTER when you have the word in your head.\n"
+    elif quiz_number == 2 or quiz_number == 3:
+        action_string = "Type 'h' if you want a hint. \n Type in your answer: \n"
+    elif quiz_number == 4:
+        action_string = "Type the number with the correct answer: \n"
+
+    return quiz_number, action_string
+
+
 def start_program():
 
     chosen_file_name = ask_file_name()
@@ -68,5 +94,7 @@ def start_program():
     word_list_df = pd.read_csv("src\\data\\" + chosen_file_name)
 
     from_language, to_language = choose_language_order(word_list_df)
+
+    select_quiz_type()
 
     print(f"Let's START! We will quiz words from {from_language} to {to_language}.\n")
