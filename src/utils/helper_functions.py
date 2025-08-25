@@ -12,7 +12,7 @@ def clean_string(string1):
     # Remove unnecessary spaces on beginning, end, and between words
     string1_cleaned = re.sub(r"\s+", " ", string1_without_parentheses.strip())
 
-    return string1_cleaned.lower()
+    return string1_cleaned
 
 
 def give_hint(answer_string, skip_words_list):

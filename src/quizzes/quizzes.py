@@ -31,7 +31,7 @@ def start_quiz(word_list, to_language, quiz_number, action_string):
         user_input = input(
             f"""\n Can you translate '{chosen_word.original_word_from_language}' to {to_language}?
             {action_string}"""
-        ).lower()
+        )
 
         if quiz_number == 4:
             while user_input not in ("1", "2", "3", "4"):
@@ -45,16 +45,16 @@ def start_quiz(word_list, to_language, quiz_number, action_string):
             user_input = input(f"The hint is: '{hint}'. Please try again: \n")
 
         # check if correct answer is typed in
-        if user_input == chosen_word.correct_answer_to_language:
+        if user_input.lower() == chosen_word.correct_answer_to_language.lower():
             print("This answer is CORRECT!\n")
             nr_words_correct += 1
         else:
-            if user_input != chosen_word.correct_answer_to_language and quiz_number != 1:
+            if user_input.lower() != chosen_word.correct_answer_to_language.lower() and quiz_number != 1:
                 print("This answer is WRONG!")
             print(f"The correct answer is '{chosen_word.correct_answer_to_language}'.\n")
 
         # remove this row if answer is correct OR we only quiz each word once
-        if quiz_number == 1 or quiz_number == 2 or user_input == chosen_word.correct_answer_to_language:
+        if quiz_number == 1 or quiz_number == 2 or user_input.lower() == chosen_word.correct_answer_to_language.lower():
             test_word_list.remove(chosen_word)
 
     print("YOU'VE FINISHED THE QUIZ!")
