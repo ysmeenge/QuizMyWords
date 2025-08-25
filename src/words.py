@@ -36,21 +36,16 @@ class Word:
             hint_index = len(first_word) + 1
 
         # show the first letter
+        added_letter_as_hint = False
         for ch in self.correct_answer_to_language[hint_index:]:
-            hint_index += 1
-            if (ch >= "a" and ch <= "z") or (ch >= "A" and ch <= "Z"):
-                hint += ch  # add the letter that gives the hint
-                break
+            if ch.isalpha():
+                if added_letter_as_hint:
+                    hint += "."
+                else:
+                    hint += ch
+                    added_letter_as_hint = True
             else:
                 hint += ch  # add the ch that isn't a letter
-
-        # for all other characters; dots for letters, other characters are shown
-        for ch in self.correct_answer_to_language[hint_index:]:
-            if (ch >= "a" and ch <= "z") or (ch >= "A" and ch <= "Z"):
-                hint += "."
-            else:
-                hint += ch
-
         return hint
 
     @staticmethod

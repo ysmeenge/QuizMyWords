@@ -2,8 +2,6 @@ import src.utils.helper_functions as help
 
 from src.words import Word
 
-# mock_skip_list = ["to", "a", "an", "la", "el", "un", "una", "een", "het", "de"]
-
 
 def test_clean_string_with_parentheses():
     assert help.clean_string("La tortuga (extra info)") == "La tortuga"
