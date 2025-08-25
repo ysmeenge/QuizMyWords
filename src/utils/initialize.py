@@ -2,6 +2,7 @@ import os
 import pandas as pd
 
 import src.quizzes.quizzes as quiz
+from src.words import Word
 
 
 def ask_file_name():  # Note: future improvment -> error messages are delayed
@@ -98,9 +99,8 @@ def start_program():
 
     from_language, to_language = choose_language_order(word_list_df)
 
+    word_list = [Word(row[from_language], row[to_language]) for _, row in word_list_df.iterrows()]
+
     quiz_number, action_string = select_quiz_type()
 
-    skip_words_df = pd.read_csv("src\\data\\skip_list.csv")
-    skip_words_list = skip_words_df["WORDS"].tolist()
-
-    quiz.start_quiz(word_list_df, from_language, to_language, quiz_number, action_string, skip_words_list)
+    quiz.start_quiz(word_list, to_language, quiz_number, action_string)

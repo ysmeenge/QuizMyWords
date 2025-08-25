@@ -3,7 +3,7 @@ import re
 
 def clean_string(string1):
     """
-    Removes unnecessary spaces and text in between the parentheses ().
+    Removes unnecessary spaces and text in between the parentheses () and write in lowercase.
     """
 
     # Removing everything between parentheses using regex
@@ -12,7 +12,7 @@ def clean_string(string1):
     # Remove unnecessary spaces on beginning, end, and between words
     string1_cleaned = re.sub(r"\s+", " ", string1_without_parentheses.strip())
 
-    return string1_cleaned
+    return string1_cleaned.lower()
 
 
 def give_hint(answer_string, skip_words_list):
